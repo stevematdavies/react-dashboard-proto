@@ -9,7 +9,7 @@ import {
   Financial, 
   ColorMapping, 
   Pyramid, 
-  Stack} from './components/charts'
+  Stacked} from './components/charts'
 import { Customers, Employees, Orders } from './pages'
 import { Kanban, Calendar, ColorPicker, Editor } from './components/apps'
 
@@ -39,7 +39,7 @@ const Routing = () => {
     <Route path="/financial" element={<Financial /> }/>
     <Route path="/color-mapping" element={<ColorMapping />} />
     <Route path="/pyramid" element={<Pyramid />} />
-    <Route path="/stacked" element={<Stack />} />
+    <Route path="/stacked" element={<Stacked />} />
   </Routes>
   )
 }
