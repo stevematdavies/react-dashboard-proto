@@ -10,15 +10,15 @@ import {
   ColorMapping, 
   Pyramid, 
   Stacked} from './components/charts'
-import { Customers, Employees, Orders } from './pages'
+import { Customers, Employees, Orders, Ecommerce } from './pages'
 import { Kanban, Calendar, ColorPicker, Editor } from './components/apps'
 
 const Routing = () => {
   return (
     <Routes>
     {/* Dashboard*/}
-    <Route path="/" element="ECommerce" />
-    <Route path="/ecommerce" element="ECommerce" />
+    <Route path="/" element={<Ecommerce />} />
+    <Route path="/ecommerce" element={<Ecommerce />} />
 
     {/* Pages */}
     <Route path="/orders" element={<Orders />} />

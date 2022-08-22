@@ -5,13 +5,14 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 
 import './App.css'
 import Routing from './Routing'
+import { Navbar, Sidebar } from './components'
 
-const getSidebar = am => {
+const getSidebarClass = am => {
   let base =  'dark:bg-secondary-dark-bg '
   const cls = base + am
     ? 'w-72 fixed sidebar bg-white'
     : 'w-0'
-    return <div className={base += cls}>{am ? 'Sidebar' : 'Sidebar w-0 '}</div>
+    return base += cls
 }
 
 const getNavbarClass = am => {
@@ -35,10 +36,10 @@ const App = () => {
                 </button>       
               </TooltipComponent>
               </div>
-            {getSidebar(menuIsActive)}
+            <div className={getSidebarClass(menuIsActive)}><Sidebar /></div>
             <div className={getNavbarClass(menuIsActive)}>
               <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
-                Navbar
+               <Navbar />
               </div>
             </div>
             <Routing />
