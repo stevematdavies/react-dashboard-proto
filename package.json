@@ -3,6 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@syncfusion/ej2": "^20.2.44",
+    "@syncfusion/ej2-react-calendars": "^20.2.43",
+    "@syncfusion/ej2-react-charts": "^20.2.44",
+    "@syncfusion/ej2-react-dropdowns": "^20.2.44",
+    "@syncfusion/ej2-react-grids": "^20.2.44",
+    "@syncfusion/ej2-react-inputs": "^20.2.44",
+    "@syncfusion/ej2-react-kanban": "^20.2.44",
+    "@syncfusion/ej2-react-popups": "^20.2.43",
+    "@syncfusion/ej2-richtexteditor": "^20.2.44",
+    "@syncfusion/ej2-schedule": "^20.2.43",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -34,5 +44,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
   }
 }
