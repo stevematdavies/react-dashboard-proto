@@ -4,38 +4,37 @@ import { SiShopware } from 'react-icons/si'
 import { MdOutlineCancel } from 'react-icons/md'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
-import {links} from '../data/dummy'
+import {links as menuItems} from '../data/dummy'
 
+const getActiveLinkClass = ia => {
+  let base = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg ';
+  return  ia
+  ?  base += 'text-white text-md m-2'
+  :  base += 'text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2';
+}
 
-const _renderLinks = ia => {
-
-  const __getActiveLinkClass = ia => {
-    let base = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg ';
-    return  ia
-    ?  base += 'text-white text-md m-2'
-    :  base += 'text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2';
-  }
-
-  const __renderChildLinks = (clinks) => 
-    clinks.map(clink => (
+const renderMenuItemLinks = links => 
+    links.map(link => (
       <NavLink
-        to={`/${clink.name}`}
-        key={clink.name}
+        to={`/${link.name}`}
+        key={link.name}
         onClick={()=>{}  }
-        className={__getActiveLinkClass(clink.isActive)}>
-          {clink.icon}
-          <span className="capitalize">{clink.name}</span>
+        className={getActiveLinkClass(link.isActive)}>
+          {link.icon}
+          <span className="capitalize">{link.name}</span>
       </NavLink>
   ));
-  
+
+const renderMenuItems = ia => {
+
   return <div className='mt-10'>
     {
-      links.map(plink => (
-        <div key={plink.title}>
+      menuItems.map(item => (
+        <div key={item.title}>
           <p className="text-gray-400 m3 mt-4 uppercase">
-            {plink.title}
+            {item.title}
           </p>
-          { __renderChildLinks(plink.links) }
+          { renderMenuItemLinks(item.links) }
         </div>
       ))
     }
@@ -64,7 +63,7 @@ const Sidebar = () => {
             </button>
           </TooltipComponent>
         </div>
-        { _renderLinks(isMenuActive)}
+        { renderMenuItems(isMenuActive)}
       </>) 
     }
     </div>
