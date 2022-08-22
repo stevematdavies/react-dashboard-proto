@@ -7,22 +7,22 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import {links} from '../data/dummy'
 
 
-const renderLinks = ia => {
+const _renderLinks = ia => {
 
-  const getActiveLinkClass = ia => {
+  const __getActiveLinkClass = ia => {
     let base = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg ';
     return  ia
     ?  base += 'text-white text-md m-2'
     :  base += 'text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2';
   }
 
-  const renderChildLinks = (clinks) => 
+  const __renderChildLinks = (clinks) => 
     clinks.map(clink => (
       <NavLink
         to={`/${clink.name}`}
         key={clink.name}
         onClick={()=>{}  }
-        className={getActiveLinkClass(clink.isActive)}>
+        className={__getActiveLinkClass(clink.isActive)}>
           {clink.icon}
           <span className="capitalize">{clink.name}</span>
       </NavLink>
@@ -35,7 +35,7 @@ const renderLinks = ia => {
           <p className="text-gray-400 m3 mt-4 uppercase">
             {plink.title}
           </p>
-          { renderChildLinks(plink.links) }
+          { __renderChildLinks(plink.links) }
         </div>
       ))
     }
@@ -64,7 +64,7 @@ const Sidebar = () => {
             </button>
           </TooltipComponent>
         </div>
-        { renderLinks(isMenuActive)}
+        { _renderLinks(isMenuActive)}
       </>) 
     }
     </div>
